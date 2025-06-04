@@ -2271,3 +2271,15 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* Eigene Anpassungen */
+.subtitle {
+  font-size: 2em;
+  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  margin-top: -0.3em;
+  margin-bottom: 0.5em;
+  color: #555;
+}
