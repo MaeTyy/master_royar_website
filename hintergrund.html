@@ -31,16 +31,38 @@
 										<h1>Hintergrund & Motivation</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
 									<p>Meine akademische Laufbahn begann mit einem Bachelorstudium der Grabungstechnik, in dem ich mich intensiv mit archäologischen Feldmethoden und der systematischen Datenaufnahme beschäftigte. Schon früh interessierte mich dabei die Frage, wie man die in der Archäologie typischerweise großen und komplexen Datenmengen durch standardisierte Verfahren effizienter erfassen, strukturieren und analysieren könnte. Dieses Interesse vertiefte ich im Rahmen meiner Bachelorarbeit durch die Entwicklung eines Workflows zur standardisierten Aufnahme und Ablage archäologischer Prospektionsdaten, unter anderem mithilfe einer PostgreSQL-Datenbank. Besonders faszinierend war für mich hierbei stets die Schnittstelle zwischen technischer Umsetzung und der nutzerfreundlichen Bedienbarkeit solcher Systeme, sodass auch technisch weniger versierte Anwender effektiv damit arbeiten können.</p>
 									<p>Die vorliegende Masterarbeit stellt die logische Fortsetzung dieser Interessen dar: Mithilfe der in den letzten Jahren erheblich weiterentwickelten und zunehmend leichter zugänglichen Methoden künstlicher Intelligenz soll ein System geschaffen werden, das durch moderne Large Language Models (LLMs) die intuitive Nutzung komplexer archäologischer Datenbanken ermöglicht – ohne vertiefte Kenntnisse der Datenbanksprache SQL.</p>
-									
+
 									<hr class="major" />
 
 									<h2>Herausforderungen archäologischer Datenmengen und Komplexität</h2>
-									<p>Archäologische Daten zeichnen sich durch ihre Menge und inhärente Komplexität aus: unterschiedliche Datenformate, hohe Kontextabhängigkeit und Unsicherheiten in der Interpretation erschweren eine systematische Nutzung und Auswertung. Zudem existieren oft weder einheitliche Standards noch angemessene Nutzeroberflächen, was den effektiven Zugang zu relevanten Informationen erschwert oder sogar unmöglich macht.</p>
-									<p>Die Masterarbeit greift konkret zwei Forschungsprojekte des Vorderasiatischen Museums Berlin auf: FRIMCLAY und States of Clay. Diese Projekte beschäftigen sich mit der systematischen Aufnahme und Analyse von Tonobjekten, insbesondere Siegelungen und Siegelbildern aus dem alten Mesopotamien. Dabei stehen Fragen der Dokumentation und strukturierten Interpretation dieser Artefakte im Vordergrund. Ein Schwerpunkt lag dabei auf der Digitalisierung dieser Siegelungen mittels Reflectance Transformation Imaging (RTI). Bei dieser Methode werden zahlreiche Aufnahmen aus verschiedenen Lichtrichtungen gemacht, um auch feinste Oberflächenstrukturen sichtbar zu machen und zu analysieren. Im Zuge dieser Arbeiten wurde deutlich, dass die bestehenden Zuordnungen der Siegelungen zu rekonstruierten Siegelbildern teilweise unklar oder möglicherweise fehlerhaft sind. Um diese Zuordnungen objektiv und systematisch zu überprüfen sowie die tatsächliche Anzahl unterschiedlicher Siegelbilder besser bestimmen zu können, wurde eine umfassende Datenbank aufgebaut. Darin werden sowohl Detailinformationen zu einzelnen Abbildungselementen als auch exakte Messdaten gespeichert, was eine präzisere Auswertung und Interpretation ermöglicht. Genau hier setzt das in der Masterarbeit entwickelte System an, indem es mithilfe von KI-gestützten Abfragemöglichkeiten eine intuitive und effiziente Nutzung dieser komplexen Datenbank ermöglicht – auch für Fachanwender ohne tiefgehende Kenntnisse der Datenbanksprache SQL.</p>
+
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+
+									<!-- Linke Spalte: Text -->
+									<div style="flex: 1 1 50%;">
+										<p>Archäologische Daten zeichnen sich durch ihre Menge und inhärente Komplexität aus: unterschiedliche Datenformate, hohe Kontextabhängigkeit und Unsicherheiten in der Interpretation erschweren eine systematische Nutzung und Auswertung. Zudem existieren oft weder einheitliche Standards noch angemessene Nutzeroberflächen, was den effektiven Zugang zu relevanten Informationen erschwert oder sogar unmöglich macht.</p>
+										<p>Die Masterarbeit greift konkret zwei Forschungsprojekte des Vorderasiatischen Museums Berlin auf: <strong>FRIMCLAY</strong> und <strong>States of Clay</strong>. Diese Projekte beschäftigen sich mit der systematischen Aufnahme und Analyse von Tonobjekten, insbesondere Siegelungen und Siegelbildern aus dem alten Mesopotamien. Dabei stehen Fragen der Dokumentation und strukturierten Interpretation dieser Artefakte im Vordergrund. Ein Schwerpunkt lag dabei auf der Digitalisierung dieser Siegelungen mittels <em>Reflectance Transformation Imaging (RTI)</em>. Bei dieser Methode werden zahlreiche Aufnahmen aus verschiedenen Lichtrichtungen gemacht, um auch feinste Oberflächenstrukturen sichtbar zu machen und zu analysieren.</p>
+										<p>Im Zuge dieser Arbeiten wurde deutlich, dass die bestehenden Zuordnungen der Siegelungen zu rekonstruierten Siegelbildern teilweise unklar oder möglicherweise fehlerhaft sind. Um diese Zuordnungen objektiv und systematisch zu überprüfen sowie die tatsächliche Anzahl unterschiedlicher Siegelbilder besser bestimmen zu können, wurde eine umfassende Datenbank aufgebaut. Darin werden sowohl Detailinformationen zu einzelnen Abbildungselementen als auch exakte Messdaten gespeichert, was eine präzisere Auswertung und Interpretation ermöglicht. Genau hier setzt das in der Masterarbeit entwickelte System an, indem es mithilfe von KI-gestützten Abfragemöglichkeiten eine intuitive und effiziente Nutzung dieser komplexen Datenbank ermöglicht – auch für Fachanwender ohne tiefgehende Kenntnisse der Datenbanksprache SQL.</p>
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 40%; max-width: 500px;">
+										<figure>
+										<img src="images/SOC2_VA10850_W09124a_a_plane_0.jpg(1).jpg" alt="RTI-Aufnahme eines Tonobjekts mit Siegelabdruck" style="width: 100%; height: auto;" />
+										<figcaption class="centered">RTI-Aufnahme eines Tonobjekts mit Siegelabdruck</figcaption>
+
+									</div>
+
+									</div>
+
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/89_blanko.png" alt="Rekonstruiertes Siegelbild" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Rekonstruiertes Siegelbild</figcaption>
+									</figure>
+
 
 									<hr class="major" />
 
@@ -51,8 +73,25 @@
 									<hr class="major" />
 
 									<h2>Datenmodellierung und Systemarchitektur</h2>
-									<p>Zur systematischen Verwaltung der archäologischen Forschungsdaten wurde im Rahmen dieser Masterarbeit eine relationale PostgreSQL-Datenbank entwickelt, die den besonderen Anforderungen an Unsicherheiten, Mehrdeutigkeiten und Mehrschichtigkeit gerecht wird. Grundlage war eine klare konzeptuelle Trennung zwischen Siegelung und Siegelbild, ergänzt um deren jeweilige Bestandteile wie Abbildungselemente und Messstrecken. Die Datenbank bietet durch die Möglichkeit der Vergabe von Konfidenzwerten und Beziehungen eine differenzierte Erfassung sowohl gesicherter als auch hypothetischer Zuordnungen. Zusätzlich wurde ein GIS-basiertes Visualisierungssystem realisiert, das interne Strukturen schematisch und vergleichbar abbildet.</p>
-									<p></p>
+
+									<p>Zur systematischen Verwaltung der archäologischen Forschungsdaten wurde im Rahmen dieser Masterarbeit eine relationale PostgreSQL-Datenbank entwickelt, die den besonderen Anforderungen an Unsicherheiten, Mehrdeutigkeiten und Mehrschichtigkeit gerecht wird. Grundlage war eine klare konzeptuelle Trennung zwischen Siegelung und Siegelbild, ergänzt um deren jeweilige Bestandteile wie Abbildungselemente und Messstrecken. Die Datenbank bietet durch die Möglichkeit der Vergabe von Konfidenzwerten und Beziehungen eine differenzierte Erfassung sowohl gesicherter als auch hypothetischer Zuordnungen.</p>
+
+									<!-- ERD-Bild -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Meistersiegel(5).png" alt="Entity-Relationship-Diagramm der Datenbank" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Entity-Relationship-Diagramm (ERD) der konzipierten PostgreSQL-Datenbank</figcaption>
+									</figure>
+
+									<div style="margin-bottom: 2rem;"></div>
+
+									<p>Zusätzlich wurde ein GIS-basiertes Visualisierungssystem realisiert, das interne Strukturen schematisch und vergleichbar abbildet.</p>
+
+									<!-- GIS-Screenshot -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Screenshot_GIS.png" alt="Screenshot QGIS-Projekt" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Screenshot aus dem QGIS-Projekt zur Visualisierung der Datenbankinhalte</figcaption>
+									</figure>
+
 								</section>
 
 						</div>
@@ -67,38 +106,47 @@
 									<header class="major">
 										<h2>Menü</h2>
 									</header>
-									<ul>
+									<ul style="border-bottom: none; margin-bottom: 0.5em;">
 										<li><a href="index.html">Startseite</a></li>
 										<li><a href="hintergrund.html">Hintergrund</a></li>
 										<li><a href="modellauswahl.html">Modellauswahl</a></li>
 										<li><a href="umsetzung.html">Umsetzung</a></li>
-										<li><a href="fazit.html">Fazit</a></li>
-										<li><a href="kontakt.html">Kontakt</a></li>
+										<li style="border-bottom: none;"><a href="fazit.html">Fazit</a></li>
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
+							<!-- Impressum -->
+							<section style="margin-top: 2em; padding-top: 0;">
+								<header class="major" style="margin-bottom: -1em;">
+									<h2>Impressum</h2>
+								</header>
+								<div class="impressum">
+									<div class="impressum-block"><strong>Autor:</strong><br />
+									Niklas Royar<br />
+									Berliner Hochschule für Technik<br />
+									Master Geoinformation</div>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+									<div class="impressum-block"><strong>Betreuer:</strong><br />
+									Prof. Dr.-Ing. Boris Resnik</div>
 
-						</div>
+									<div class="impressum-block"><strong>Zweitgutachter:</strong><br />
+									Prof. Dr. Eleanor Hobley</div>
+
+									<div class="impressum-block"><strong>Datum:</strong> 09.06.2025</div>
+						
+
+									<div class="impressum-block"><strong>Kontakt:</strong><br />
+									E-Mail: <a href="mailto:niklas.royar@gmail.com">niklas.royar@gmail.com</a> &amp;
+									<a href="mailto:niklas.royar@web.de">niklas.royar@web.de</a></div>
+								</div>
+
+								<hr style="border: none; border-top: 2px solid #ddd; margin: 1.2em 0;" />
+
+								<div class="sidebar-logo">
+								<img src="images/BHT_Logo_horizontal_Anthrazit_transparent_RGB_288ppi.png" alt="BHT Logo">
+								</div>
+							</section>
 					</div>
-
 			</div>
 
 		<!-- Scripts -->

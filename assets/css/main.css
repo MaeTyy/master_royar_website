@@ -2283,3 +2283,40 @@ button,
   margin-bottom: 0.5em;
   color: #555;
 }
+
+figcaption.centered {
+	text-align: center;
+	font-size: 0.8em;
+	color: #666;
+	margin-top: 0.5rem;
+}
+
+.spacer {
+	margin-bottom: 2rem;
+}
+
+#sidebar #menu {
+  border-bottom: none;
+  margin-bottom: 1.5em; /* Optional: etwas Abstand vor "Impressum" */
+  padding-bottom: 0;
+}
+
+.impressum {
+  font-size: 0.85em; /* Etwas kleiner als normal */
+  line-height: 1.4;  /* Kompaktere Zeilenhöhe */
+}
+
+.impressum-block {
+  margin-bottom: 0.8em; /* Geringerer Abstand zwischen den Blöcken */
+}
+
+.sidebar-logo {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.sidebar-logo img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
