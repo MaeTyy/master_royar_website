@@ -31,17 +31,56 @@
 										<h1>Modellauswahl</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<p>Für die Entwicklung des Systems war es notwendig, ein geeignetes LLM auszuwählen, das die automatische Übersetzung von Nutzereingaben in SQL-Abfragen ermöglicht. Um diese Auswahl fundiert und nachvollziehbar treffen zu können, wurde zunächst ein Katalog an Kriterien definiert, die zentrale Anforderungen an das Modell im Kontext speziell dieser Masterarbeit abbilden.</p>
+									<p>Anschließend wurden verschiedene aktuelle Text-to-SQL-Ansätze und konkrete Modellimplementierungen anhand dieser Kriterien miteinander verglichen. Auf Basis dieser Analyse konnte eine begründete Modellauswahl für die Umsetzung getroffen werden.</p>
+									<p>Zusätzlich zur Modellauswahl musste entschieden werden, welche Optimierungsstrategien geeignet sind, um die Ergebnisqualität des gewählten Modells weiter zu verbessern.</p>
 
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Kriterien zur Modellauswahl</h2>
+									<p>Es wurden insgesamt fünf relevante Kriterien definiert. Diese sind in der nachfolgenden Tabelle übersichtlich zusammengefasst.</p>
+									
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Kriterien.png" alt="Übersicht der Auswahlkriterien" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Übersicht der Auswahlkriterien</figcaption>
+									</figure>
+
+									<hr class="major" />
+
+									<h2>Modellvergleich & Auswahlprozess</h2>
+									<p>Im Rahmen dieser Masterarbeit wurden elf verschiedene Systeme aus dem Bereich Text-to-SQL vorgestellt und auf Grundlage der definierten Kriterien analysiert. Dabei wurden sowohl vollständige Softwarelösungen als auch für sich stehende aus Text-to-SQL optimierte LLM berücksichtigt. Nachfolgend findet sich eine tabellarische Übersicht dieser elf Ansätze, farblich mithilfe eines Ampleschemas bewertet.</p>
+									
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Vergleich.png" alt="Übersicht der verschiedenen Text-to-SQL Systeme" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Übersicht der verschiedenen Text-to-SQL Systeme</figcaption>
+									</figure>
+
+									<div style="margin-bottom: 2rem;"></div>
+
+									<p>Im Verlauf der Analyse wurde entschieden, kein bestehendes Frontend- oder Agentensystem zu übernehmen, sondern ein eigenes, möglichst nah am LLM entwickeltes System zu realisieren. Damit sollte maximale Flexibilität erreicht und ein vertieftes Verständnis für die Funktionsweise von Text-to-SQL-Anwendungen gewonnen werden.</p>
+									<p>Diese Kriterien führten zu einer Eingrenzung auf vier vielversprechende Kandidaten: NSQL, CodeS, PremSQL und SQLCoder. Alle vier erfüllen die grundlegenden Anforderungen an Offenheit, Anpassbarkeit und technische Eigenständigkeit – und boten somit eine geeignete Basis für eine eigenentwickelte Lösung.</p>
+									<p>In der anschließenden vertieften Bewertung zeigte sich SQLCoder als die überzeugendste Wahl. Das Modell ließ sich schnell und unkompliziert in die lokale Entwicklungsumgebung integrieren, ist aktiv gepflegt und breit verfügbar (z. B. über Hugging Face), und besitzt eine fundierte Dokumentation sowie eine aktive Entwickler-Community. Im Vergleich dazu erwiesen sich NSQL und CodeS als weniger gut dokumentiert und schwächer verbreitet, während PremSQL in der Umsetzung hohe Einstiegshürden und komplexe Modellanpassungen erforderte.</p>
+									<p>Aus diesen Gründen wurde SQLCoder als zentrale Modellbasis für das im Rahmen dieser Arbeit entwickelte System ausgewählt.</p>
+
+									<hr class="major" />
+
+									<h2>Wahl geeigneter Optimierungsstrategien</h2>
+									<p>Für die Optimierung der Ausgabe eines LLM basierten Text-to-SQL Systems gibt es verschiedene gängige Strategien. Die Wichtigsten sind in der nachfolgenden Tabelle zusammengefasst.</p>
+
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Optimierungsstrategien.png" alt="Übersicht der Optimierungsstrategien" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Übersicht der Optimierungsstrategien</figcaption>
+									</figure>
+
+									<div style="margin-bottom: 2rem;"></div>
+
+									<p>Die Auswahl geeigneter Optimierungsstrategien erfolgte anhand der spezifischen Anforderungen der eingesetzten Datenbank und des verwendeten Modells. Aufgrund vieler nicht sprechender und ähnlicher Tabellen- und Spaltennamen wurde der Fokus auf Maßnahmen gelegt, die die semantische Verständlichkeit und strukturelle Klarheit für das LLM erhöhen.</p>
+									<p>Zentral ist dabei die Optimierung der semantischen Schema-Kompatibilität, unterstützt durch eine gezielte Schemadokumentation in verständlicher Sprache. Ergänzt wird dies durch Schema-Linking, das die strukturierte Zuordnung von Spracheingaben zu Datenbankelementen im Prompt sicherstellt. Beide Maßnahmen bilden die Grundlage für eine robuste SQL-Generierung durch SQLCoder.</p>
+									<p>Zudem wurde Few-Shot Learning integriert, um durch wenige domänenspezifische Beispiele im Prompt kontextuelles Modellverhalten zu fördern – ohne den Aufwand eines vollständigen Fine-Tunings. Letzteres wurde bewusst ausgeschlossen, da es angesichts begrenzter Trainingsdaten und Ressourcen nicht praktikabel war.</p>
+									<p>Insgesamt fußt die Optimierung auf einem durchdachten Prompt Engineering, das verschiedene Techniken kombiniert und eine flexible, ressourcenschonende Anpassung des Modells an die Anforderungen archäologischer Datenbanken ermöglicht.</p>
 
 								</section>
 
@@ -91,7 +130,7 @@
 									<a href="mailto:niklas.royar@web.de">niklas.royar@web.de</a></div>
 								</div>
 
-								<hr style="border: none; border-top: 2px solid #ddd; margin: 1.2em 0;" />
+								<hr style="border: none; border-top: 2px solid #ddd; margin: 1.5em 0;" />
 
 								<div class="sidebar-logo">
 								<img src="images/BHT_Logo_horizontal_Anthrazit_transparent_RGB_288ppi.png" alt="BHT Logo">
