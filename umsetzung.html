@@ -31,17 +31,32 @@
 										<h1>Umsetzung</h1>
 									</header>
 
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
+									<p>Nach der Auswahl eines geeigneten Modells und der Definition zentraler Optimierungsstrategien wurde ein eigenes Text-to-SQL-System entwickelt, das gezielt auf die Anforderungen archäologischer Forschungsdatenbanken ausgerichtet ist. Das System besteht aus einem klar getrennten Frontend und Backend und ermöglicht eine direkte, lokale Anbindung an eine PostgreSQL-Datenbank.</p>
+									<p>Ziel der Umsetzung war es, ein leichtgewichtiges, transparentes und erweiterbares System zu schaffen, das vollständig offline betrieben werden kann. Der Fokus lag dabei auf einer möglichst direkten Interaktion mit dem LLM sowie einer präzisen Steuerung der Eingabe- und Ausgabestrukturen. Neben einer API zur Kommunikation zwischen Modell und Datenbank wurde auch eine benutzerfreundliche Oberfläche zur Abfrageformulierung und Ergebnisanzeige entwickelt.</p>
+									
 									<hr class="major" />
 
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Promptdesign und Modellinteraktion</h2>
+
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+									
+									<!-- Linke Spalte: Text -->
+									<div style="flex: 1 1 50%;">
+										<p>SQLCoder ist ein Sprachmodell, das speziell darauf trainiert wurde, SQL-Abfragen aus natürlichsprachigen Eingaben zu erzeugen. Es arbeitet promptbasiert und erwartet eine klar strukturierte Eingabe, die bestimmte Platzhalter bzw. Abschnitte enthält. Die verwendete Promptstruktur ist rechts dargestellt.</p>
+										<p>Die gezeigte Promptstruktur enthält mehrere Platzhalter, die gezielt befüllt werden müssen – einerseits mit der konkreten Nutzerfrage, andererseits mit strukturierten Kontextinformationen zur angebundenen Datenbank. Letztere wurden im Rahmen dieser Arbeit systematisch aufbereitet und eingebunden: Neben einer detaillierten DDL-Darstellung (Schema-Linking) wurden auch gezielte Abfragebeispiele (Few-Shot Learning) integriert. Da das Modell lokal ausgeführt wurde und der verfügbare VRAM begrenzt war, musste zudem eine umfangreiche Token-Minimierung erfolgen, um alle relevanten Informationen innerhalb der maximalen Eingabelänge unterzubringen.</p>
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 40%; max-width: 500px;">
+										<figure>
+										<img src="images/Promptstruktur.png" alt="Promptstruktur von SQLCoder-7-b2" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Promptstruktur von SQLCoder-7-b2</figcaption>
+									</div>
+									</div>
+
+									<div style="margin-bottom: 2rem;"></div>
+
+									<p>Als Ausgabe erzeugt SQLCoder stets den vollständigen Prompt mitsamt allen eingebetteten Informationen – ergänzt um die darauf basierende, vom Modell generierte SQL-Abfrage.</p>
 
 									<hr class="major" />
 
