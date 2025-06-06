@@ -55,21 +55,130 @@
 									</div>
 
 									<div style="margin-bottom: 2rem;"></div>
-
+														
 									<p>Als Ausgabe erzeugt SQLCoder stets den vollständigen Prompt mitsamt allen eingebetteten Informationen – ergänzt um die darauf basierende, vom Modell generierte SQL-Abfrage.</p>
+																	
+									<hr class="major" />
+
+									<h2>Semantische Klarheit durch Natural Views</h2>
+
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+
+									<div style="flex: 1 1 40%; max-width: 850px;">
+										<figure>
+										<img src="images/Natural Views.png" alt="Übersicht der Umbenennungen" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Übersicht der Umbenennungen</figcaption>
+									</div>
+																			
+									<div style="flex: 1 1 50%;">
+										<p>Um Fehlinterpretationen bei der SQL-Generierung zu vermeiden, wurden im Projekt sogenannte Natural Views eingeführt: ursprüngliche Tabellen- und Spaltennamen wurden durch sprechendere Bezeichnungen ersetzt, die den tatsächlichen Inhalt besser widerspiegeln. Diese rein dokumentationsbasierte Umbenennung verbessert die Verständlichkeit der Datenstruktur für das Sprachmodell. Die Abbildung links zeigt eine Auswahl der ersetzten Benennungen.</p>
+									</div>
+									</div>	
+									
+									<hr class="major" />
+
+									<h2>Systemarchitektur im Überblick</h2>
+
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+									
+									<!-- Linke Spalte: Text -->
+									<div style="flex: 1 1 20%;">
+										<p>Das System besteht aus einem lokal betriebenen Client-Server-Setup. Die Benutzeroberfläche läuft im Browser, während das Backend auf einem lokalen Python-Server (Flask) ausgeführt wird. Dort werden Anfragen verarbeitet, an das LLM übergeben und Ergebnisse aus einer PostgreSQL-Datenbank zurückgegeben. Die Architektur ermöglicht eine datensouveräne, offline-fähige Anwendung ohne externe Dienste.</p>										
+										<p>Rechts ist das Gesamtsystem in einem Deploymentdiagramm abgebildet.</p>
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 500px;">
+										<figure>
+										<img src="images/Deploymentdiagramm.png" alt="Deploymentdiagramm" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Deploymentdiagramm</figcaption>
+									</div>
+									</div>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Ablauf einer Benutzeranfrage</h2>
+
+									<!-- Textabschnitt in voller Breite -->
+									<div style="margin-bottom: 2rem;">
+										<p>Der Ablauf einer Benutzeranfrage beginnt mit der Eingabe einer natürlichsprachigen Frage im Webformular. Das Backend verarbeitet die Anfrage, ruft das Sprachmodell lokal auf und extrahiert die SQL-Abfrage. Diese wird überprüft, rekonvertiert, an die Datenbank gesendet und das Ergebnis wieder zurückgegeben. Das Sequenzdiagramm zeigt diesen Ablauf Schritt für Schritt.</p>
+									</div>
+									
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Sequenzdiagramm.png" alt="Sequenzdiagramm" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Sequenzdiagramm</figcaption>
+									</figure>
 
 									<hr class="major" />
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<h2> Systemlogik und Komponenten</h2>
 
+									<p>Die Architektur folgt dem Prinzip klar getrennter Verantwortlichkeiten. Im Backend übernimmt jedes Modul eine spezifische Aufgabe: Prompt-Erstellung, Modellaufruf, SQL-Extraktion, Validierung und Datenbankkommunikation. Das Frontend wiederum steuert Navigation, Visualisierung und Interaktion. Die Diagramme zeigen die aufgeteilten Komponenten im Überblick.</p>
+																	
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Komponentendiagramm_Backend.png" alt="Komponentendiagramm Backend" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Komponentendiagramm Backend</figcaption>
+									</figure>
+
+									<div style="margin-bottom: 4rem;"></div>
+
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Komponentendiagramm_Frontend.png" alt="Komponentendiagramm Frontend" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Komponentendiagramm Frontend</figcaption>
+									</figure>
+
+									<hr class="major" />
+
+									<h2>Dateistruktur und Quellcode-Organisation</h2>
+
+									<p>Die Projektstruktur spiegelt die Modularität auch im Quellcode wider. Das Backend trennt API, Modellintegration und Validierung in eigene Module. Auch das Frontend folgt einer klaren Trennung zwischen Templates, CSS/JS und Blueprints. Diese Struktur unterstützt Wartbarkeit und Erweiterbarkeit – etwa für den Einsatz weiterer LLMs oder die Anbindung alternativer Datenquellen.</p>
+									<p>Das vollständige Projekt inklusive dem kompletten Code ist unter 
+										<a href="https://gitlab.com/MaeTyy/master" target="_blank">https://gitlab.com/MaeTyy/master</a> einsehbar.
+									</p>
+
+									<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 8rem;">
+									
+									<!-- Linke Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 500px;">
+										<figure>
+										<img src="images/Projektstruktur_Backend.png" alt="Projektstruktur Backend" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Projektstruktur Backend</figcaption>
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 399px;">
+										<figure>
+										<img src="images/Projektstruktur_Frontend.png" alt="Projektstruktur Frontend" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Projektstruktur Frontend</figcaption>
+									</div>
+									</div>
+
+									<hr class="major" />
+
+									<h2>Abläufe im Frontend und Backend</h2>
+
+									<p>Zur weiteren Verdeutlichung wurden Aktivitätsdiagramme erstellt, die die Abläufe im Backend (Schrittfolge der Anfrageverarbeitung) sowie im Frontend (Navigation, Button-Logik) dokumentieren. Diese verdeutlichen die Robustheit der Steuerungslogik und den Umgang mit Fehlerfällen.</p>
+
+									<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 8rem;">
+									
+									<!-- Linke Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 300px;">
+										<figure>
+										<img src="images/Aktivitätsdiagramm.png" alt="Aktivitätsdiagramm Backend" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Aktivitätsdiagramm Backend</figcaption>
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 800px;">
+										<figure>
+										<img src="images/Aktivitätsdiagramm_Frontend.png" alt="Aktivitätsdiagramm Frontend" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Aktivitätsdiagramm Frontend</figcaption>
+									</div>
+									</div>
+																	
 								</section>
 
 						</div>
