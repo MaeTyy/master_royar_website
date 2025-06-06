@@ -30,28 +30,81 @@
 									<header class="main">
 										<h1>Fazit</h1>
 									</header>
-
-									<p>Mit dem hier vorgestellten System wurde ein Prototyp entwickelt, der die automatische Übersetzung natürlichsprachlicher Fragen in SQL-Abfragen für archäologische Forschungsdatenbanken ermöglicht. Der Fokus lag auf einer lokal ausführbaren, modular aufgebauten Lösung, die ohne externe Dienste auskommt und maximale Transparenz bietet.</p>
-									<p>Die folgende Seite fasst zentrale Erkenntnisse der Umsetzung zusammen, bewertet diese und skizziert mögliche Perspektiven für eine Weiterentwicklung.</p>
-
-									<hr class="major" />
-
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									
+									<p>Die folgende Seite fasst zentrale Erkenntnisse der Umsetzung zusammen, benennt Stärken und Herausforderungen des entwickelten Systems und skizziert mögliche Perspektiven für Optimierung und Weiterentwicklung.</p>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+									<h2>Ergebnisse & Bewertung des Prototyps</h2>
+									<p>Das entwickelte System erfüllt die gesetzten Ziele in weiten Teilen: Es besteht aus einem modularen, lokal ausführbaren Backend, das SQLCoder-7B-2 zur Abfragegenerierung nutzt, sowie einer Web-Oberfläche mit History-Funktion und ERD-Anzeige. Die Architektur folgt bewährten Best Practices und ermöglicht eine klare Trennung von Komponenten.</p>
+													
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+									
+									<!-- Linke Spalte: Text -->
+									<div style="flex: 1 1 20%;">
+										<p>Die Benutzeroberfläche erlaubt eine einfache Interaktion mit dem System. Nach dem Start wird eine Eingabemaske mit optionaler Historie angezeigt.</p>										
+									</div>
 
-									<hr class="major" />
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 750px;">
+										<figure>
+										<img src="images/Hauptseite.png" alt="Hauptseite" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Hauptseite der Webanwendung</figcaption>
+									</div>
+									</div>
 
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<div style="margin-bottom: 4rem;"></div>
 
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+									
+									<!-- Linke Spalte: Text -->
+									<div style="flex: 1 1 20%;">
+										<p>Kommt es zu Fehlern bei der Abfragegenerierung, erhält die Nutzerschaft eine direkte Rückmeldung.</p>				
+									</div>
+
+									<!-- Rechte Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 750px;">
+										<figure>
+										<img src="images/Hauptseite_Fehler.png" alt="Hauptseite mit Fehler" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Fehlermeldung auf der Hauptseite</figcaption>
+									</div>
+									</div>
+
+									<div style="margin-bottom: 4rem;"></div>
+
+									<!-- Textabschnitt in voller Breite -->
+									<div style="margin-bottom: 2rem;">
+										<p>Einfachere Abfragen werden vom Modell in der Regel korrekt umgesetzt.</p>
+									</div>
+									
+									<!-- Bild unterhalb mit Unterschrift -->
+									<figure style="margin-top: 2rem;">
+									<img src="images/Hauptseite_mit_Antwort.png" alt="Hauptseite mit Antwort" style="width: 100%; height: auto;" />
+									<figcaption class="centered">Hauptseite mit korrekter Antwort</figcaption>
+									</figure>
+
+									<div style="margin-bottom: 4rem;"></div>
+
+									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+
+									<!-- Linke Spalte: Bild mit Bildunterschrift -->
+									<div style="flex: 1 1 60%; max-width: 800px;">
+										<figure>
+										<img src="images/Hauptseite_mit_inkorrekter_Antwort.png" alt="Hauptseite mit falscher Antwort" style="width: 100%; height: auto;" />
+										<figcaption class="centered">Hauptseite mit fehlerhafter Antwort</figcaption>
+									</div>
+									
+									<!-- Rechte Spalte: Text -->
+									<div style="flex: 1 1 20%;">
+										<p>Bei komplexeren Anfragen kommt es jedoch regelmäßig zu semantischen Fehlern. Ein Beispiel zeigt, wie das Modell eine falsche Spalte referenziert, wodurch zwar ausführbare, aber nicht sinnvolle SQL-Statements entstehen.</p>				
+									</div>									
+									</div>
+
+									<div style="margin-bottom: 4rem;"></div>
+
+									<p>Die Integration von „Natural Views“ zur besseren Modellinterpretation hat sich als hilfreiche Strategie erwiesen. Dennoch bleibt die Qualität der Modellantworten in komplexeren Fällen unzureichend. Insbesondere die Begrenzung der Kontextlänge durch den verfügbaren GPU-Speicher verhinderte den geplanten Einsatz umfangreicher Few-Shot-Beispiele zur Verbesserung der Modellleistung.</p>
+									<p>Trotz dieser Einschränkungen war die Wahl von SQLCoder sinnvoll. Die aktive Community, die offenen Modellvarianten und der lokal ausführbare Aufbau waren zentrale Erfolgsfaktoren für die Entwicklung. Alternativen wie PremSQL oder OmniSQL bieten für künftige Iterationen spannende Ansatzpunkte – entweder durch ein schlankeres Setup oder durch eine stärkere Orientierung an wissenschaftlichen Anforderungen.</p>
+								
 								</section>
 
 						</div>
@@ -89,7 +142,7 @@
 									<div class="impressum-block"><strong>Betreuer:</strong><br />
 									Prof. Dr.-Ing. Boris Resnik</div>
 
-									<div class="impressum-block"><strong>Zweitgutachter:</strong><br />
+									<div class="impressum-block"><strong>Zweitgutachterin:</strong><br />
 									Prof. Dr. Eleanor Hobley</div>
 
 									<div class="impressum-block"><strong>Datum:</strong> 09.06.2025</div>
