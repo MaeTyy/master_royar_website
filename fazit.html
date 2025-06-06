@@ -37,7 +37,9 @@
 
 									<h2>Ergebnisse & Bewertung des Prototyps</h2>
 									<p>Das entwickelte System erfüllt die gesetzten Ziele in weiten Teilen: Es besteht aus einem modularen, lokal ausführbaren Backend, das SQLCoder-7B-2 zur Abfragegenerierung nutzt, sowie einer Web-Oberfläche mit History-Funktion und ERD-Anzeige. Die Architektur folgt bewährten Best Practices und ermöglicht eine klare Trennung von Komponenten.</p>
-													
+									
+									<div style="margin-bottom: 4rem;"></div>
+
 									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
 									
 									<!-- Linke Spalte: Text -->
@@ -88,7 +90,7 @@
 									<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
 
 									<!-- Linke Spalte: Bild mit Bildunterschrift -->
-									<div style="flex: 1 1 60%; max-width: 800px;">
+									<div style="flex: 1 1 60%; max-width: 950px;">
 										<figure>
 										<img src="images/Hauptseite_mit_inkorrekter_Antwort.png" alt="Hauptseite mit falscher Antwort" style="width: 100%; height: auto;" />
 										<figcaption class="centered">Hauptseite mit fehlerhafter Antwort</figcaption>
@@ -105,6 +107,23 @@
 									<p>Die Integration von „Natural Views“ zur besseren Modellinterpretation hat sich als hilfreiche Strategie erwiesen. Dennoch bleibt die Qualität der Modellantworten in komplexeren Fällen unzureichend. Insbesondere die Begrenzung der Kontextlänge durch den verfügbaren GPU-Speicher verhinderte den geplanten Einsatz umfangreicher Few-Shot-Beispiele zur Verbesserung der Modellleistung.</p>
 									<p>Trotz dieser Einschränkungen war die Wahl von SQLCoder sinnvoll. Die aktive Community, die offenen Modellvarianten und der lokal ausführbare Aufbau waren zentrale Erfolgsfaktoren für die Entwicklung. Alternativen wie PremSQL oder OmniSQL bieten für künftige Iterationen spannende Ansatzpunkte – entweder durch ein schlankeres Setup oder durch eine stärkere Orientierung an wissenschaftlichen Anforderungen.</p>
 								
+									<hr class="major" />
+
+									<h2>Optimierungsmöglichkeiten des Prototyps</h2>
+
+									<p>Die Anwendung zeigt funktionale Stärken, aber auch Verbesserungspotenziale. Eine einfache Erweiterung wäre ein Synonym-Glossar, das dem Modell hilft, gleichbedeutende Begriffe korrekt zuzuordnen. Auch die bestehende Umbenennungslogik könnte weiter geschärft werden: Eine konsequentere Trennung ähnlicher Tabellen- und Spaltennamen würde Verwechslungen reduzieren, etwa durch stärker differenzierende Begriffe.</p>
+									<p>Besonders vielversprechend erscheint ein RAG-Ansatz. Durch die gezielte Bereitstellung relevanter Kontextinformationen ließe sich die Qualität der Modellantworten deutlich verbessern. Der technische Mehraufwand – insbesondere für einen gut abgestimmten Retriever – wäre allerdings nicht unerheblich.</p>
+									<p>Weitere Optionen wie Chain-of-Thought oder Fine-Tuning wurden bewusst nicht umgesetzt, da sie mit höherem Entwicklungsaufwand verbunden sind. Perspektivisch könnten automatisierte Trainingsdatensätze oder CoT-Erweiterungen wie SQL-Eval jedoch den Einstieg erleichtern.</p>
+
+									<hr class="major" />
+
+									<h2>Erweiterungsmöglichkeiten des Systems</h2>
+
+									<p>Die Anwendung bietet bereits einen funktionalen Zugang zu komplexen Forschungsdaten. Für eine künftige Weiterentwicklung sind jedoch verschiedene Ausbaustufen denkbar. Eine sinnvolle Ergänzung wäre ein kurzer Hinweistext oder ein Tutorial zur Formulierung effektiver Nutzeranfragen – gerade für weniger datenbankerfahrene Nutzergruppen.</p>
+									<p>Eine Erweiterung der Weboberfläche um ein integriertes WebGIS würde den bestehenden Zugriff auf die Datenbank deutlich erweitern. Da viele Abfragen in der Forschungspraxis aus der kartografischen Analyse heraus entstehen, könnte die visuelle Darstellung von Ergebnissen die Nutzung und Interpretation spürbar erleichtern.</p>
+									<p>Ergänzend ließe sich der tabellarische Output durch automatisch generierte Zusammenfassungen in natürlicher Sprache erweitern. So könnten auch komplexe Abfragen leichter verständlich vermittelt werden.</p>
+									<p>Perspektivisch ließe sich das System zu einer integrierten Dialogplattform weiterentwickeln, in der ein Chat-LLM nicht nur die Nutzeranfrage verarbeitet, sondern auch den passenden Kontext bereitstellt, SQL-Abfragen generiert und die Ergebnisse in natürlicher Sprache zusammenfasst. In Kombination mit einem Retriever und einem eingebundenen WebGIS könnte so eine durchgängige, interaktive Oberfläche entstehen, die den gesamten Analyseprozess von der Anfrage bis zur Interpretation abdeckt.</p>
+
 								</section>
 
 						</div>
@@ -148,9 +167,14 @@
 									<div class="impressum-block"><strong>Datum:</strong> 09.06.2025</div>
 						
 
-									<div class="impressum-block"><strong>Kontakt:</strong><br />
-									E-Mail: <a href="mailto:niklas.royar@gmail.com">niklas.royar@gmail.com</a> &amp;
-									<a href="mailto:niklas.royar@web.de">niklas.royar@web.de</a></div>
+									<div class="impressum-block">
+									<strong>Kontakt:</strong><br />
+									E-Mail: 
+									<a href="mailto:niklas.royar@gmail.com">niklas.royar@gmail.com</a> &amp; 
+									<a href="mailto:niklas.royar@web.de">niklas.royar@web.de</a><br />
+									Telefon: <a href="tel:+491751234567">+49 157 82412745</a>
+									</div>
+
 								</div>
 
 								<hr style="border: none; border-top: 2px solid #ddd; margin: 1.5em 0;" />
